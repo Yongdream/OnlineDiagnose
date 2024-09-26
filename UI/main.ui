@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1141</width>
+    <height>747</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1121</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1200</width>
+      <height>800</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>19</width>
+      <height>19</height>
+     </size>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>历史数据</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>选择文件</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>801</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>在线数据</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>模型训练</string>
+     </attribute>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="pb_mt_select_file">
+            <property name="text">
+             <string>选择文件</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_mt_visual_data">
+            <property name="text">
+             <string>数据可视化</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>28</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="l_mt_select_model">
+            <property name="text">
+             <string>选择模型</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comb_mt_select_model">
+            <item>
+             <property name="text">
+              <string>SVM</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RF</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ANN</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>CNN</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LSTM</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>GRU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bi_LSTM</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRSN</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DRN</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>88</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_mt_start_training">
+            <property name="text">
+             <string>开始训练</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QLabel" name="l_mt_visual_data">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="l_select_show">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>结果展示</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rb_mt_classification_report">
+            <property name="text">
+             <string>分类报告</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rb_confusion_matrix">
+            <property name="text">
+             <string>混淆矩阵</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rb_mt_roc">
+            <property name="text">
+             <string>ROC曲线</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rb_mt_precision_recall">
+            <property name="text">
+             <string>精度召回曲线</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rb_mt_loss_curcv">
+            <property name="text">
+             <string>损失曲线</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rb__mt_acc_curcv">
+            <property name="text">
+             <string>正确率曲线</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_mt_show_result">
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_mt_save_model">
+            <property name="text">
+             <string>保存模型</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <widget class="QTextBrowser" name="tb_mt_train_result"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="l_mt_train_result">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>故障诊断</string>
+     </attribute>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_fd_select_model">
+            <property name="text">
+             <string>选择模型</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QLabel" name="l_fd_visual_diagnosis_data">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_fd_local_diagnosis">
+            <property name="text">
+             <string>本地诊断</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>18</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_fd_real_time_diagnosis">
+            <property name="text">
+             <string>实时诊断</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <widget class="QTextBrowser" name="tb_fd_diagnosis_result"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="l_fd_diagnosis_result">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>工艺分析</string>
+     </attribute>
+     <widget class="QLabel" name="l_pa_select_data">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>选择数据</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionabout"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionabout">
+   <property name="text">
+    <string>关于此软件</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>

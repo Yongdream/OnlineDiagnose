@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1141</width>
+    <height>758</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>基于生产过程数据分析的设备和产品智能诊断控制决策管控系统软件V1.0</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="maximumSize">
+       <size>
+        <width>2400</width>
+        <height>1600</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>19</width>
+        <height>19</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>模型训练</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QPushButton" name="pb_mt_select_file">
+              <property name="text">
+               <string>选择文件</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_mt_visual_data">
+              <property name="text">
+               <string>数据可视化</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>28</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="l_mt_select_model">
+              <property name="text">
+               <string>选择模型</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comb_mt_select_model">
+              <item>
+               <property name="text">
+                <string>SVM</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>RF</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ANN</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>CNN</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>LSTM</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>GRU</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Bi_LSTM</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>DAN</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>MFSAN</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>DG</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>88</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_mt_start_training">
+              <property name="text">
+               <string>开始训练</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="l_mt_visual_data">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="l_select_show">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>结果展示</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_mt_classification_report">
+              <property name="text">
+               <string>分类报告</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_fd</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_confusion_matrix">
+              <property name="text">
+               <string>混淆矩阵</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_fd</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_mt_roc">
+              <property name="text">
+               <string>ROC曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_fd</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_mt_precision_recall">
+              <property name="text">
+               <string>精度召回曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_fd</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_mt_loss_curcv">
+              <property name="text">
+               <string>损失曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_fd</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb__mt_acc_curcv">
+              <property name="text">
+               <string>正确率曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_fd</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_mt_show_result">
+              <property name="text">
+               <string>确定</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_mt_save_model">
+              <property name="text">
+               <string>保存模型</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <widget class="QTextBrowser" name="tb_mt_train_result"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="l_mt_train_result">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>故障诊断</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_fd_select_model">
+              <property name="text">
+               <string>选择模型</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1" colspan="2">
+           <widget class="QLabel" name="l_fd_visual_diagnosis_data">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_fd_local_diagnosis">
+              <property name="text">
+               <string>本地诊断</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>18</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_fd_real_time_diagnosis">
+              <property name="text">
+               <string>实时诊断</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <widget class="QTextBrowser" name="tb_fd_diagnosis_result"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="l_fd_diagnosis_result">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>工艺分析</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="l_pa_select_data">
+              <property name="text">
+               <string>选择数据</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comb_pa_select_data">
+              <item>
+               <property name="text">
+                <string>BATTERY</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>UCR</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>synthetic</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_pa_data_process">
+              <property name="text">
+               <string>数据预处理</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="l_pa_select_model">
+              <property name="text">
+               <string>选择模型</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comb_pa_select_model">
+              <item>
+               <property name="text">
+                <string>TranAD</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>LSTM_AD</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>MAD_GAN</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>USAD</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>TPAD</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="l_pa_select_epoch">
+              <property name="text">
+               <string>迭代次数</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comb_pa_select_epoch">
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>15</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>30</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_pa_start_training">
+              <property name="text">
+               <string>训练与测试</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_pa_end_training">
+              <property name="text">
+               <string>模型测试</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="l_pa_select_show">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>结果展示</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comb_pa_abnoramal_report">
+              <item>
+               <property name="text">
+                <string>output_0</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_1</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_2</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_4</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_5</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_6</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_7</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_8</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_9</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_10</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_11</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_12</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_13</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_14</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_15</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_16</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_17</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_18</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_19</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_20</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_21</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_22</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_23</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_24</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_25</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_26</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_27</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_28</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_29</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_30</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>output_31</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_pa_abnoramal_report">
+              <property name="text">
+               <string>分析结果</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_pa</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_pa_roc">
+              <property name="text">
+               <string>ROC曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_pa</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_pa_precision_recall">
+              <property name="text">
+               <string>精度召回曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_pa</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_pa_loss_curcv">
+              <property name="text">
+               <string>损失曲线</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup_pa</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pb_pa_show_result">
+              <property name="text">
+               <string>确定</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QTextBrowser" name="tb_pa_train_result"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="l_pa_train_result">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QTableWidget" name="tw_pa_test_result">
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <row>
+               <property name="text">
+                <string>0</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>2</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>3</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>4</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>5</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>6</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>7</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>8</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>10</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>11</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>12</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>13</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>14</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>15</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>16</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>17</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>18</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>19</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>20</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>21</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>22</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>23</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>24</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>26</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>27</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>28</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>29</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>30</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>31</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>32</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>33</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>34</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>35</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>36</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>37</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>38</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>39</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>40</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>41</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>42</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>43</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>44</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>45</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>46</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>47</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>48</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>50</string>
+               </property>
+              </row>
+              <column>
+               <property name="text">
+                <string>F1</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Precision</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Recall</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>TP</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>TN</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>FP</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>FN</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>ROC/AUC</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>threshold</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Agency FB</family>
+                 <pointsize>12</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="l_pa_visual_data">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>质量追溯</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pb_qt_start_quality_trace">
+            <property name="text">
+             <string>开始追溯</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>阵列追溯可视化</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="l_qt_visual_trace_result">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-style:solid;
+border-width:1px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" rowspan="2">
+           <widget class="QTableWidget" name="tw_qt_result">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustIgnored</enum>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>150</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>6</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>7</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>8</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>9</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>10</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>11</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>12</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>13</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>14</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>15</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>16</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>17</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>18</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>19</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>20</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>21</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>22</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>23</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>24</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>25</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>26</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>27</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>28</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>29</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>31</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>32</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>33</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>34</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>35</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>36</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>37</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>38</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>39</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>40</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>41</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>42</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>43</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>44</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>45</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>46</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>47</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>48</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>50</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>电池编号</string>
+             </property>
+             <property name="font">
+              <font>
+               <family>Agency FB</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>实际质量情况</string>
+             </property>
+             <property name="font">
+              <font>
+               <family>Agency FB</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>质量追溯结果</string>
+             </property>
+             <property name="font">
+              <font>
+               <family>Agency FB</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1141</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionabout"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionabout">
+   <property name="text">
+    <string>关于此软件</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_pa"/>
+  <buttongroup name="buttonGroup_fd"/>
+ </buttongroups>
+</ui>
